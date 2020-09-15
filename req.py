@@ -52,6 +52,6 @@ class TokenParser(HTMLParser):
                 if attrs[i][1] == '_token':
                     MyHTMLParser.token = attrs[i+1][1]
 
-
-# parser = MyHTMLParser()
-# send(parser,'vlaves-doropou@3028.syzefxis.gov.gr','vlaves1','6947552549','test from function')
+#example usage
+# myparser = TokenParser()
+# send(myparser,<username>,<password>,'+3069xxxxxxxx','test message')
