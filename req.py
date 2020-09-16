@@ -17,7 +17,7 @@ def send(parser,username,password,phone,msg):
 
     print("parsing...")
     parser.feed(r.text)
-    login_token = MyHTMLParser.token
+    login_token = TokenParser.token
     print("login token: ",login_token)
 
     #post token and user, pass
@@ -30,7 +30,7 @@ def send(parser,username,password,phone,msg):
 
     print("parsing...")
     parser.feed(r.text)
-    send_token = MyHTMLParser.token
+    send_token = TokenParser.token
     print("send token: ",send_token)
 
     #post token and send the sms
@@ -50,7 +50,7 @@ class TokenParser(HTMLParser):
         if tag == "input":
             for i in range(len(attrs)):
                 if attrs[i][1] == '_token':
-                    MyHTMLParser.token = attrs[i+1][1]
+                    TokenParser.token = attrs[i+1][1]
 
 #example usage
 # myparser = TokenParser()
